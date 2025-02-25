@@ -14,26 +14,7 @@ clear options;
 PF = @PAL_Logistic;
 %-- Initial parameter
 % threshold, slope, guess rate, lapse rate
-paramsFree = [1 0 1 0];
-searchGrid.alpha = 21:.01:48;
-% searchGrid.beta = 10.^[-1:.1:1];
-searchGrid.beta = 0.6;
-searchGrid.lambda = 0:0.01:0.3;
-searchGrid.gamma = 0:0.01:0.1;
-options.TolX = 1e-12;   %increase desired precision (by lowering tolerance)
-options.TolFun = 1e-12;
-options.MaxIter = 2000;
-options.MaxFunEvals = 2000;
-options.Display = 'iter';
-searchGrid_alter1.alpha = 21:.01:48;
-searchGrid_alter1.beta = 0.6;
-searchGrid_alter1.lambda = 0:0.01:0.3;
-searchGrid_alter1.gamma = 0:0.01:0.1;
 
-searchGrid_alter2.alpha = 21:.01:48;
-searchGrid_alter2.beta = 0.6;
-searchGrid_alter2.lambda = 0:0.01:0.3;
-searchGrid_alter2.gamma = 0:0.01:0.1;
 parfor sub=1:nSub
 
     StimLevels = stimuli;
